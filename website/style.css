@@ -1,0 +1,66 @@
+h1{
+    margin-left: 2.5rem;
+}
+li{
+    list-style: none;
+    margin-left: 2rem;
+    padding-top: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.navbar>nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    display: flex;
+    
+}
+img[src="images/lap.jpeg"]{
+    height: 100vh;
+    width: 95vw;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+}
+.skills{
+    display: flex;
+    flex: 1;
+}
+
+.skills>div{
+    width: 30vw;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 5rem;
+
+}
+
+.skills>div>p{
+    padding: 3rem;
+}
+
+.image img{
+    height: 700px;
+    width: 1500px;
+}
+
+.footer{
+    
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-left: 6rem;
+}
+
+.footer>p{
+    font-size: 18px;
+}
+
+a:link, a:visited {
+    color: rgb(28, 197, 180);
+
+}
+a{
+    text-decoration: none;
+}
