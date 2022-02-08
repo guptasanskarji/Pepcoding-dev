@@ -51,6 +51,38 @@ console.log(b);
 var num = 200;
 console.log(`Half of ${num} is ${num/2}`);
 
+// var has some problems
+
+// 1). Redeclaration is allowed
+var r='hello';
+console.log(r);
+
+var r=100;
+console.log(r);
+
+// overcome krne ke liye -->  we use let keyword
+let l=100;
+console.log(l);
+
+//let l="200";             // SyntaxError: Identifier 'l' has already been declared
+//console.log(l);
+
+l=300;                 // we can reinitialize a variable but we can't redeclare a variable
+console.log(l); 
+
+// loops in js
+var num = 10;
+for (var i=0;i<num;i++){
+    if(i%2==0){
+        console.log("num is even");
+    }
+}
+ 
+// const keyword = na hi redeclare na hi reinitialize
+const m=2;
+console.log(m);
+m=4;                         //TypeError: Assignment to constant variable.
+console.log(m);
 
 
 
