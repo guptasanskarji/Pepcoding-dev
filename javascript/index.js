@@ -40,8 +40,18 @@ console.log(f);
 //string --> single quotes('') , double quotes("") , backtick(``)
 var str = 'a';
 console.log(str);
-var str = "how r u?"
+var str = "how r u?\nI m absolutely fine."       // backslash n(\n) used for new line
 console.log(str);
+
+//use of backticks
+var b = `lets do 
+something new`;                    
+console.log(b);
+
+var num = 200;
+console.log(`Half of ${num} is ${num/2}`);
+
+
 
 
 
