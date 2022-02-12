@@ -1,3 +1,4 @@
+////////////////////// 08/02/2022 /////////////////////////////////////
 // javascript (1995) --> frontend + backend + database
 //starting Javascript
 
@@ -77,12 +78,31 @@ for (var i=0;i<num;i++){
         console.log("num is even");
     }
 }
+console.log(i);
+
+// 2nd problem with var keywords
+// var keyword is function scoped (globally) and 
+// let keyword is block scoped (inside the existing block only)
+let j=20;
+for (var i=0;i<num;i++){
+    let j = 20;
+    if(i%2==0){
+        let hello = 1000;
+        console.log(i);
+        console.log(hello);
+    }
+}
+
  
 // const keyword = na hi redeclare na hi reinitialize
 const m=2;
 console.log(m);
-m=4;                         //TypeError: Assignment to constant variable.
+// m=4;                         //TypeError: Assignment to constant variable.
 console.log(m);
+
+
+
+
 
 
 
