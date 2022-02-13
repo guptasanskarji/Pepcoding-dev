@@ -12,6 +12,7 @@ console.log(cars[3]);
 cars[3] = "Mahindra";
 console.log(cars[3]);
 
+
 //adding element in an array 
 cars[7]="honda";
 console.log(cars);
