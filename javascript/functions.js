@@ -48,9 +48,9 @@ console.log(""+ additionIIFE);
 
 //       OR
 
-let additionIIFE = (function add(a,b){
-    console.log(a+b);
-})(20,30);
+// let additionIIFE = (function add(a,b){
+//    console.log(a+b);
+// })(20,30);
 
 
 
