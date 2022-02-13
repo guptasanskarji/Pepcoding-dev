@@ -8,6 +8,11 @@
         console.log(str[8]);     // output :- p
         console.log(str.length);
 
+        // strings in js are immutable
+        str[4] = "z";
+        console.log(str);
+        
+
 // String methods 
  
 // 1). Extraction method
@@ -57,7 +62,7 @@
   let trimStr = "                                Hello                How are you              ";
   console.log(trimStr);
   console.log(trimStr.length);
-  
+
   console.log(trimStr.trim());
   console.log(trimStr.trim().length);
 
