@@ -1,0 +1,6 @@
+--->  node wcat.js [options] [filepath]   (options-> -s, -n, -b)
+1. node wcat.js filepath --> display contents of a file 
+2. node wcat.js filepath1 filepath2.... --> display content of all files
+3. node wcat.js -s filepath --> file content me space hata dega or big break lga dega
+4. node wcat.js -n filepath --> numbering all the lines
+5. node wcat.js -b filepath --> numbering only non empty lines

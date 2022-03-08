@@ -66,7 +66,11 @@
   console.log(trimStr.trim());
   console.log(trimStr.trim().length);
 
-  
+  var str = "Hello my name is Sanskar";
+  console.log(str);
+  let a = str.split("e");              // divides string on the basis of arguments and put them in an array
+  console.log(a);
+
 
 
 
