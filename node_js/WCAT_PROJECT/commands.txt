@@ -4,3 +4,7 @@
 3. node wcat.js -s filepath --> file content me space hata dega or big break lga dega
 4. node wcat.js -n filepath --> numbering all the lines
 5. node wcat.js -b filepath --> numbering only non empty lines
+
+//////////////////////////////////////////////
+
+create a file --> node wcat.js -c filename
