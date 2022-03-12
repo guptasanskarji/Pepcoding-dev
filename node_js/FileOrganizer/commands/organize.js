@@ -42,5 +42,5 @@ function organize(srcPath) {
 
 
 
-let srcPath = "C:\Users\HP\Desktop\pepcoding dev\node_js\FileOrganizer\downloads"
+let srcPath = "C:\\Users\\HP\\Desktop\\pepcoding dev\\node_js\\FileOrganizer\\downloads"
 organize(srcPath);
