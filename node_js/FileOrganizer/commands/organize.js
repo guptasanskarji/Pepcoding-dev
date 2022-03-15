@@ -35,12 +35,71 @@ function organize(srcPath) {
   //4.trvaerse over all the files and classify them on the basis of their extension (.pdf , .mp3)
     for (let i = 0; i < allFiles.length; i++){
         // let ext = allFiles[i].split(".")[1];
-        let ext = path.extname(allFiles[i]);
-        console.log(ext);
-    }
-}
+     //   let ext = path.extname(allFiles[i]);
+       // console.log(ext);
+       let fullPathOfFile = path.join(srcPath, allFiles[i]);
+       console.log(fullPathOfFile);
+       //1. check if it is a file or folder
+       //lstatsync gives the information regarding the link provided ,
+       let isThisAFile = fs.lstatSync(fullPathOfFile).isFile(); //true-> file hai to  or false-> agar folder h 
+       console.log(allFiles[i] + " is " + isThisAFile);
+       if (isThisAFile) {
+         //1.1 get ext name
+         let ext = path.extname(allFiles[i]).split(".")[1];
+         // console.log(ext);
+         //1.2 get folder name from extension
+         let folderName = getFolderName(ext); //archives
+         // console.log(folderName);
+         //1.3 copy from src folder (srcPath) and paste in dest folder (folder_name e.g. document, media etc)
+                         //copy      kya copy kro    paste
+         copyFileToDest(srcPath, fullPathOfFile, folderName);
+       }
+     }
+ }
+ 
+ 
+ function getFolderName(ext) {
+   //magic
+   for (let key in types) {
+     // console.log(key);
+     for (let i = 0; i < types[key].length; i++) {
+       if (types[key][i] == ext) {
+         return key;
+       }
+     }
+   }
+   return "miscellaneous"
+ }
+ 
+ function copyFileToDest(srcPath, fullPathOfFile, folderName) {
+   //1. folderName ka path banana h
+   let destFolderPath = path.join(srcPath, "organized_files", folderName); //....../downloads/organized_files/archives
+   // console.log(des);
+   //2 check folder if exists, if it does not, then make folder
+ 
+   if (!fs.existsSync(destFolderPath)) {
+     fs.mkdirSync(destFolderPath);
+   }
+   //3. copy file from src folder to dest folder
+ 
+   // Returns the last portion of a path
+   let fileName = path.basename(fullPathOfFile); //abc.zip
+   let destFileName = path.join(destFolderPath, fileName);    
+                       // src        dest
+   fs.copyFileSync(fullPathOfFile, destFileName);
+   //magic
+ }
+ 
+ 
+ // let srcPath="/Users/abhishekgoel/Desktop/Desktop/AbhishekGoel/FJP5/Node/fileOrganizer/downloads"
+ // organize(srcPath);
+ 
+ module.exports = {
+   organize:organize
+ }
 
 
 
-let srcPath = "C:\\Users\\HP\\Desktop\\pepcoding dev\\node_js\\FileOrganizer\\downloads"
-organize(srcPath);
+
+//let srcPath = "C:\\Users\\HP\\Desktop\\pepcoding dev\\node_js\\FileOrganizer\\downloads"
+//organize(srcPath);
