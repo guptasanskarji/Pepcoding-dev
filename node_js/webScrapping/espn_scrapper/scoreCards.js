@@ -32,14 +32,51 @@ function getMatchDetails(html) {
     let venueOfMatch = descArr[1];
     console.log(dateOfMatch);
     console.log(venueOfMatch);
-    //3. get result
-      let matchResEle = selecTool(
-        ".match-info.match-info-MATCH.match-info-MATCH-half-width>.status-text"
-      );
+  //3. get result
+   let matchResEle = selecTool(
+     ".match-info.match-info-MATCH.match-info-MATCH-half-width>.status-text"
+    );
       console.log(matchResEle.text());
   //4. get team names
-    
+    let teamNames = selecTool(".name-detail>.name-link");
+    // console.log(teamNames.text());
+
+    let team1= selecTool(teamNames[0]).text();
+    let team2= selecTool(teamNames[1]).text();
+    console.log(team1);
+    console.log(team2);
+
+
+
+// 5. get Innings
+let allBatsmenTable = selecTool(".table.batsman tbody");
+console.log("number of batsmen tables are ->   ",allBatsmenTable.length);
+let htmlString = "";
+let count = 0;
+for (let i = 0; i < allBatsmenTable.length; i++) {
+  htmlString = htmlString + selecTool(allBatsmenTable[i]).html();
+  //Get the descendants(table rows ) of each element (table )
+  let allRows = selecTool(allBatsmenTable[i]).find("tr"); // -> data of batsmen + empty rows 
+  
+  for (let i = 0; i < allRows.length; i++) {
+    //Check to see if any of the matched elements have the given className
+    let row = selecTool(allRows[i]);
+    let firstColmnOfRow = row.find("td")[0];
+    if (selecTool(firstColmnOfRow).hasClass("batsman-cell")) {
+      //will be getting valid data
+      // count++;
+      // console.log("inside " + count);
+      // name | runs | balls | 4's | 6's | sr
+
+      
+    }
+  }
 }
+
+  
+// console.log(htmlString);
+}
+
 //visit every scorecard and get info 
 module.exports = {
     gifs:getInfoFromScorecard

@@ -1,7 +1,7 @@
 const request = require("request");
 const cheerio = require("cheerio");
 // const getScorecardObj = require("./scorecards");
-const {gifs} = require("./scorecards");
+const {gifs} = require("./scoreCards");
 function getAllMatch(url) {
     // console.log("from allMatch.js ",url);
     request(url, cb);
