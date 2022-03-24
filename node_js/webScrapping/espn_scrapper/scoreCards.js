@@ -67,6 +67,14 @@ for (let i = 0; i < allBatsmenTable.length; i++) {
       // count++;
       // console.log("inside " + count);
       // name | runs | balls | 4's | 6's | sr
+      let playerName = selecTool(row.find("td")[0]).text();
+      let runs = selecTool(row.find("td")[2]).text();
+      let balls = selecTool(row.find("td")[3]).text();
+      let numberof4 = selecTool(row.find("td")[5]).text();
+      let numberof6 = selecTool(row.find("td")[6]).text();
+      let sr = selecTool(row.find("td")[7]).text();
+
+      console.log(`playerName -> ${playerName} runScored -> ${runs} ballsPlayed -> ${balls} numbOfFours -> ${numberof4} numbOfSixes -> ${numberof6} strikeRate -> ${sr}`);
 
       
     }
